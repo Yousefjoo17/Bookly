@@ -26,16 +26,27 @@ class HomeViewBody extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: BestSellerListView(),
+              )
             ],
           ),
         ),
-        SliverFillRemaining(
+       
+      ],
+    );
+  }
+}
+
+/*
+ SliverFillRemaining(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: BestSellerListView(),
           ),
         )
-      ],
-    );
-  }
-}
+
+        and make earse shrinkwrap=true line in list view builder
+
+ */
