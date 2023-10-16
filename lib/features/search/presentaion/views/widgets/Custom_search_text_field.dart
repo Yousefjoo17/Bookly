@@ -13,9 +13,9 @@ class CustomSearchTextField extends StatelessWidget {
           focusedBorder: customOutlineInputBorder(),
           suffixIcon: IconButton(
             onPressed: () {},
-            icon:const Opacity(
+            icon: const Opacity(
               opacity: .8,
-              child:  Icon(
+              child: Icon(
                 FontAwesomeIcons.magnifyingGlass,
                 size: 24,
               ),
@@ -26,8 +26,8 @@ class CustomSearchTextField extends StatelessWidget {
 
   OutlineInputBorder customOutlineInputBorder() {
     return OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: Colors.white),
-        );
+      borderRadius: BorderRadius.circular(12),
+      borderSide: const BorderSide(color: Colors.white),
+    );
   }
 }
