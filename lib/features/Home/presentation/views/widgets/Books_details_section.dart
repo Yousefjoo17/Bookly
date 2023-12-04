@@ -15,7 +15,9 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .18),
-          child: const CustomBookImage(imagrUrl: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"),
+          child: const CustomBookImage(
+              imagrUrl:
+                  "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"),
         ),
         const SizedBox(height: 46),
         const Text(
@@ -32,7 +34,11 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        const BookRating(mainAxisAlignment: MainAxisAlignment.center),
+        const BookRating(
+          mainAxisAlignment: MainAxisAlignment.center,
+          rating: 5,
+          count: 5555,
+        ),
         const SizedBox(height: 32),
         const BooksActions(),
       ],
