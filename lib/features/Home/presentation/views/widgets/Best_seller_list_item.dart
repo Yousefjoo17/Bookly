@@ -1,7 +1,7 @@
 import 'package:bookly/constans.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/features/Home/data/models/book_model/book_model.dart';
+import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:bookly/features/Home/presentation/views/widgets/Custom_book_image.dart';
 import 'package:bookly/features/Home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,7 @@ class BestSellersListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: bookModel);
+        GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: bookModel);
       },
       child: SizedBox(
         height: 120,
