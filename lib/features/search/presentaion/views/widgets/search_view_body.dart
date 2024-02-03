@@ -18,26 +18,30 @@ class _SearchViewBodyState extends State<SearchViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomSearchTextField(onchanged: (p0) {
-            category = p0;
-          }, onPressed: () async {
-              await BlocProvider.of<SearchCubit>(context)
-                  .fetchSearcBooks(category!);
-            
-          }),
-          const SizedBox(height: 16),
-          const Text(
-            'Search results',
-            style: Styles.textStyle18,
-          ),
-          const SizedBox(height: 16),
-          const Expanded(child: SearchListView()),
-        ],
+    return Form(
+      key: formkey,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomSearchTextField(onchanged: (p0) {
+              category = p0;
+            }, onPressed: () async {
+              if (formkey.currentState!.validate()) {
+                await BlocProvider.of<SearchCubit>(context)
+                    .fetchSearcBooks(category!);
+              }
+            }),
+            const SizedBox(height: 16),
+            const Text(
+              'Search results',
+              style: Styles.textStyle18,
+            ),
+            const SizedBox(height: 16),
+            const Expanded(child: SearchListView()),
+          ],
+        ),
       ),
     );
   }

@@ -22,7 +22,7 @@ class SearchListView extends StatelessWidget {
             },
           );
         } else if (state is SearchFailure) {
-          return ErrorWidget("Error");
+          return ErrorWidget("Error, please enter a valid name");
         } else if (state is SearchLoading) {
           return const Center(child: CircularProgressIndicator());
         } else {
